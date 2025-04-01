@@ -1,0 +1,13 @@
+streamlit
+pandas
+pillow
+python-dotenv
+fastapi
+uvicorn
+openai
+python-docx
+openpyxl
+easyocr
+pymupdf
+numpy
+python-multipart
