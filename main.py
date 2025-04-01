@@ -11,6 +11,7 @@ from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 import openai
 from docx import Document
+from dotenv import load_dotenv
 import openpyxl
 from io import BytesIO
 import logging
@@ -28,6 +29,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("data_capture_engine")
 
+load_dotenv()
 
 class DataCaptureEngine:
     def __init__(self, assets_csv_path: str, openai_api_key: str):
@@ -293,7 +295,7 @@ async def startup_event():
     logger.info("Starting Asset Data Capture Engine application")
     app.state.engine = DataCaptureEngine(
         assets_csv_path="assets.csv",
-        openai_api_key="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"
+        openai_api_key=os.environ.get("OPENAI_API_KEY", "your-api-key-here")
     )
     logger.info("Application startup complete")
 
