@@ -11,7 +11,6 @@ import sys
 from main import DataCaptureEngine
 
 # Load environment variables
-load_dotenv()
 
 st.set_page_config(
     page_title="Wealth Director - Data Extraction Tool",
