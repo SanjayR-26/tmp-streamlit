@@ -11,3 +11,4 @@ easyocr
 pymupdf
 numpy
 python-multipart
+python-dotenv
