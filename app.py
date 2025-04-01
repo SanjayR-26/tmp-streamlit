@@ -6,11 +6,13 @@ from PIL import Image
 import json
 import base64
 import sys
+from dotenv import load_dotenv
 
 # Import directly from main.py
 from main import DataCaptureEngine
 
 # Load environment variables
+load_dotenv()
 
 st.set_page_config(
     page_title="Wealth Director - Data Extraction Tool",
@@ -21,7 +23,7 @@ st.set_page_config(
 # Initialize the DataCaptureEngine directly
 @st.cache_resource
 def get_engine():
-    openai_api_key = "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"
+    openai_api_key = os.environ.get("OPENAI_API_KEY", "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")
     engine = DataCaptureEngine(
         assets_csv_path="assets.csv",
         openai_api_key=openai_api_key
